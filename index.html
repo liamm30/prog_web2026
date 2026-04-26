@@ -1,41 +1,92 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><!--permet au html d'avoir l'encodage atendu par le navigateur  -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="assets/css/style.css">
+		<link rel="stylesheet" href="assets/css/style.css"><!--permet de relier le fichier  html avec le fichier css-->
+        <script type="text/javascript" language="javascript" src="assets/js/code.js"></script><!-- permet de relier fichier html avec fichier javascript-->
     </head>
 
     <body>
-	<div id="page">
-<div class="entete"><h1>liam </h1>
-<h2>Licence 2 lettres modernes </h2>
-<img src="./assets/img/pont.jpeg" width="20%" /><img src="./assets/img/sanfrancisco.jpeg" width="10%" /></div>
-<div id="aboutme">
-<h2> A propos de moi </h2>
-<p>Mon CV des trois dernières années :</p>
-<table border="10px">
-    <thead>
-        <tr><th>année universitaire</th><th>Statut</th></tr>
-    </thead>
-    <tbody>
-        <tr><td>2025-2026</td><td>Cette année</td></tr>
+<div class="entete"><h1>Liam Licence 2 lettres modernes </h1><!--h1 permet de faire un tire de niveau 1 et class permet de donner un nom a cette element poue pouvoir lui aporter des modification ou pouvoir apporter des personnalisation avec le css-->
+<img src="./assets/img/pont.jpeg" width="20%" /><!--permet de d'ajouter une image en precisant ou elle se trouve avec un chemin -->
+</div>
+<br />
+<p div id=cv> plus d'info sur mon cv </p><!-- le p correspond a la creation d'un parragraphe c'est a dire une zone ou l'on peut ecrire avec du texte , id corespond a definir un nom pour pouvoir apporter des modification dans le fichier css-->
+<br /><!--permet de sauter une ligne-->
+    <div id="page"><!-- div permet de faire en sorte que tout les les ligne de code soit regrouperet que grace a l'idee donner ela puisse changer tout ce qui est compris enttre ce div et le /div a la ligne 37-->
+<h2>Mon CV des trois dernières années :</h2><!-- permet de faire un titre de niveau deux-->
+<table border="10px"><!--table permet de creer un tableau et boder permet de defnir la bordure du tableau -->
+    <thead><!--permet de creer le haut du tableau ou il y aura les titres des colones -->
+        <tr><th>année universitaire</th><th>Statut</th></tr><!-- tr permett de creer une ligne du tableau th permet de creer les titres des colones-->
+    </thead><!--permet de fermer la balise qui creer le haut du tableau -->
+    <tbody><!-- permet de creer le corps du tableau -->
+        <tr><td>2025-2026</td><td>Cette année</td></tr><!--tr permet de creer une ligne encore de creer une ligne du tableau et td permet de creer une case du tableau /tr permet de fermer la balise tr ce qui ferme la ligne du tableau -->
         <tr><td>2024-2025</td><td>L'année d'avant</td></tr>
         <tr><td>2023-2024</td><td>L'année d'encore avant</td></tr>
-    </tbody>
-</table>
+    </tbody><!-- permet de fermer le corps du tableau et de femer la balise tbody -->
+</table><!-- permet de fermer le balise table et ferme le tableau -->
 
-<p>Voici les cinq derniers livres que j'ai lu :</p>
-<ul>
-    <li><i>Titre</i>,<a href="https://fr.wikipedia.org/wiki/La_Promesse_de_l%27aube_(roman)"> romain gary, la promesse de l'aube</a> </li>
-    <li><i>Titre</i>,<a href="https://fr.wikipedia.org/wiki/Le_Premier_Homme"> albert camus, premier homme </a> </li>
-    <li><i>Titre</i>,<a href="https://fr.wikipedia.org/wiki/Bel-Ami"> Maupassant, bel ami</a></li>
+<h2>Voici les cinq derniers livres que j'ai lu :</h2>
+<ol><!--permet de creer une liste ordonnée c'est à dire avec des chiffres devant les propositions -->
+    <li><i>Titre</i>,<a href="https://fr.wikipedia.org/wiki/La_Promesse_de_l%27aube_(roman)"> romain gary, la promesse de l'aube</a> </li><!--li permet de de creer un element de la liste, i permet de metre en italique -->
+    <li><i>Titre</i>,<a href="https://fr.wikipedia.org/wiki/Le_Premier_Homme"> albert camus, premier homme </a> </li><!-- a premet de creer un lien ciquable sur du texte qui renvoie à une page web-->
+    <li><i>Titre</i>,<a href="https://fr.wikipedia.org/wiki/Bel-Ami"> Maupassant, bel ami</a></li><!-- /li permet de fermer la balise li et de fermer l'element de la liste-->
     <li><i>Titre</i>, <a href="https://fr.wikipedia.org/wiki/L%27École_des_femmes">Moliere, l'ecole des femmes</a> </li>
     <li><i>Titre</i><a href="https://fr.wikipedia.org/wiki/La_Gloire_de_mon_père"> Marcel Pagnol, la gloire de mon pere </a> </li>
-</ul>
+</ol><!-- permet de fermer la balise ol et de finir la liste -->
 </div>
+<div id="container">
+            <h1 style="text-align:center;">Analyse des données dans un fichier</h1><!--permet de faire un titre de niveau 1, style permet d'aligner le texte au centre -->
+
+            <div id="page-wrapper">
+                <div>
+                    <span>
+                        <label for="fileInput" ><small>Sélectionner un fichier au format .txt :</small></label><!-- small permet d'ecrire en petit et label for fileInput permet de faire un bouton pour selectionner son fichier qui se trouve dans le fichier javascript   -->
+                        <input id="fileInput" type="file" accept="text/plain" name="Fichier (.txt)" /><!-- permet de selectionner un fichier seulement txt il est relier avec son id fileInput dans le fichier javascript-->
+                    </span>
+                </div>
+                <br />
+                <p style="text-align:center;">
+                    <small>
+                        <label for="delimID" class="mylabel">Délimiteur(s)</label><!--class peremt de relier cette element du html au fichier css , label for delimID permet d'activer la ligne d'input suivante -->
+                        &nbsp;
+                        <input type="text" value=" ,;’'~|&#@=`-.?!%*$()[]{}_:+«»§\/" name="delim" id="delimID" size="40" /><!-- type="text" peremt de pouvoir ecrire ,value="" peremt d'avoir des chose qui sont deja ecrite la ou on peut ajouter du texte,id peremt de le relier a for+delimID deux ligne au dessus size permet de choisir la taille  -->
+                    </small>
+                    <br />
+                    <small>
+                        <label for="poleID" class="mylabel">Pôle</label>
+                        &nbsp;
+                        <input type="text" placeholder="entrez un pôle..." name="pole" id="poleID" size="20" /><!-- placeholder permet d'avoir ecrit une instruction dans la zone ou l'on peut ajouter du texte -->
+                    </small>
+                    &nbsp;
+                    <small>
+                        <label for="lgID" class="mylabel">Longueur</label>
+                        &nbsp;
+                        <input type="text" value="10" name="lg" id="lgID" size="10" />
+                    </small>
+                    <br />
+                    <br />
+                    <button onclick="alert('bonjour');"><span>Bonjour</span></button><!--permet de creer un bouton avec le mot bouton dessus et qui fait apparaitre une alerte quand on appuie dessus -->
+                    <br />
+                    <br />
+                    <button class="submit" onclick="segText();"><span>Segmentation</span></button><!--permet de creer un bouton qui fait de la segment taion relier dans le fichier javascript avec la fonction segText-->
+                    <button class="submit" onclick="graphiqueCamembert()"><span>graphique</span></button><!--permet de creer un bouton qui esr relier a javascript et qui aura pour but de faire un graphique-->
+                    <button class="submit" onclick="grep()"><span>grep</span></button>
+                    <button class="submit" onclick="concordencier()"><span>concordencier</span></button>
+                    <button class="submit" onclick="alert('Je ne fais rien, changez-moi !')"><span>action 4</span></button>
+                    <button class="submit" onclick="alert('Je ne fais rien, changez-moi !')"><span>action 5</span></button>
+                    <button class="submit" onclick="alert('Je ne fais rien, changez-moi !')"><span>action 6</span></button>
+                </p>
+            </div>
+            <div id="logger" style="width:100%"></div>
+            <br />
+            <div id="Global"><!--permet de relier ces element avec le fichier css-->
+                <div id="fileDisplayArea"></div><!--peremt de relier avec le fichier javascript pour creer la zone ou va apparaitre le texte du document selectionnée et est egalement relier au css--> 
+                <div id="page-analysis"></div><!--permet egalement de relier avec le fichier javascript et css-->
+            </div>
+        </div>
 <footer>
-  <p><a href="https://www.sorbonne-nouvelle.fr">Lien vers le site de Sorbonne Nouvelle.</a></p>
 </footer>
    </div>
     </body>
